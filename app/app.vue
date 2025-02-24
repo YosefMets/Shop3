@@ -5,6 +5,6 @@ useSeoMeta({
 })
 </script>
 
-<template>
+<template>qwe
   <NuxtPage />
 </template>
