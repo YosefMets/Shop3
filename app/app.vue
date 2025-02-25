@@ -3,8 +3,19 @@ useSeoMeta({
   title: 'NuxtHub Starter',
   description: 'A Nuxt template to build your full-stack application on the edge.'
 })
+
+const db = ref(null);
+
+
+  const t = Date.now()
+  db.value = await $fetch('/api/db');
+  console.log( 'Fetch DB from KV:', Date.now() - t )
+
 </script>
 
-<template>qwe
+<template>
   <NuxtPage />
+  <hr>
+  {{ db ? Object.keys( db ).length : null }}
+  <hr>
 </template>
