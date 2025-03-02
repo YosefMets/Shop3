@@ -5,7 +5,7 @@ export default eventHandler(async (event) => {
   console.log( db );
 
   try {
-    await hubKV().set(`db:${lang}`, JSON.parse(db));
+    await hubKV().set(`db:${lang}`, db);
   } catch (e) {
     console.log(e);
     return e
