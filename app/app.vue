@@ -9,7 +9,7 @@ const db = ref(null);
 
   const t = Date.now()
   db.value = await $fetch('/api/db/en');
-  console.log( 'Fetch DB from KV:', Date.now() - t, db.value )
+  console.log( 'Fetch DB from KV:', Date.now() - t, db.value );
 
 
 const nestId = generateNestId( 35 );
@@ -20,6 +20,6 @@ const nestId = generateNestId( 35 );
   <hr>
   {{ nestId }}
   <hr>
-  {{ db }}
+  {{ JSON.parse( db ) }}
   <hr>
 </template>
