@@ -20,6 +20,6 @@ const nestId = generateNestId( 35 );
   <hr>
   {{ nestId }}
   <hr>
-  {{ db }}
+  {{ JSON.parse( db ) }}
   <hr>
 </template>
