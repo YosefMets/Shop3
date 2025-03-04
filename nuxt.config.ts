@@ -8,7 +8,9 @@ export default defineNuxtConfig({
   // https://nuxt.com/modules
   modules: [
     '@nuxthub/core',
-    '@nuxt/eslint'
+    '@nuxt/eslint',
+    '@nuxtjs/i18n',
+    '@pinia/nuxt'
   ],
   hub: {
     database: true,
@@ -24,4 +26,7 @@ export default defineNuxtConfig({
   },
   // Development
   devtools: { enabled: true },
+  build: {
+    transpile: ['pinia']
+  },
 })

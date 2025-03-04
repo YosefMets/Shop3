@@ -1,6 +1,9 @@
 export default eventHandler(async (event) => {
   let db = await readBody(event);
-  try { db = JSON.parse( db ) } catch (e) {}
+  try {
+    db = decodeURI( db );
+    db = JSON.parse( db );
+  } catch (e) {}
   const { lang } = event.context.params || {};
 
   try {
