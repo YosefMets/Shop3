@@ -3,7 +3,7 @@ export default eventHandler(async (event) => {
   const { lang } = event.context.params || {}
 
   try {
-    await hubKV().set(`db:${lang}`, JSON.stringify(db));
+    await hubKV().set(`db:${lang}`, db);
   } catch (e) {
     console.log(e);
     return e
