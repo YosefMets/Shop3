@@ -1,6 +1,7 @@
 export default eventHandler(async (event) => {
-  const db = await readBody(event);
-  const { lang } = event.context.params || {}
+  let db = await readBody(event);
+  try { db = JSON.parse( db ) } catch (e) {}
+  const { lang } = event.context.params || {};
 
   try {
     await hubKV().set(`db:${lang}`, db);
